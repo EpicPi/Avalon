@@ -103,6 +103,7 @@ const submitVote = () => {
     const tokenIndex = document.getElementById("PYselector").value == "pass" ? 0 : 1;
     const votingToken = game.tokens[questNum * 14 + roleIndex * 2 + tokenIndex];
     document.getElementById("votingToken").innerText = votingToken;
+    document.getElementById("PYselector").value = "pass";
 };
 
 const PYnextQuest = () => {
