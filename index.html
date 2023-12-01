@@ -10,15 +10,15 @@
         <button onclick="setGameMaster()">Game Master</button>
         <button onclick="setPlayer()">Player</button>
       </div>
-      <div id="GameActive" class="hide">
+      <div id="GameActive" class="hide content">
         Game join code: <span id="gameCode"></span>
         <br/>
         Your role: <span id="role"></span>
         <br/>
-        <button onclick="toggleRole()">show/hide role</button>
+        <button onclick="toggleRole()">Show/Hide role</button>
         <hr/>
       </div>
-      <div id="GMQuest" class="hide">
+      <div id="GMQuest" class="hide content">
         Quest Number: <select id="GMQuestNum">
           <option id ="1">1</option>
           <option id ="2">2</option>
@@ -35,13 +35,13 @@
         <button onclick="evalQuest()">Eval Quest</button>
         <hr/>
       </div>
-      <div id="GMQuestComplete" class="hide">
+      <div id="GMQuestComplete" class="hide content">
         pass: <div id="numPass"></div>
         fail: <div id="numFail"></div>
         <button onclick="GMnextQuest()">next quest</button>
         <hr/>
       </div>
-      <div id="PYLanding" class="hide">
+      <div id="PYLanding" class="hide content">
         Index in circle:<select id="roleIndex">
           <option id ="1">1</option>
           <option id ="2">2</option>
@@ -54,7 +54,7 @@
         Join code: <input type="text" id="joinCode">
         <button onclick="joinGame()">Join game</button>
       </div>
-      <div id="PYQuest" class="hide">
+      <div id="PYQuest" class="hide content">
         Quest Number: <select id="PYQuestNum">
           <option id ="1">1</option>
           <option id ="2">2</option>
@@ -70,7 +70,7 @@
         </select>
         <button onclick="submitVote()">Submit vote</button>
       </div>
-      <div id="PYQuestComplete" class="hide">
+      <div id="PYQuestComplete" class="hide content">
         Token: <div id="votingToken"></div>
         <button onclick="PYnextQuest()"> next quest</button>
       </div>
