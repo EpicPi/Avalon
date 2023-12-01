@@ -5,53 +5,66 @@
     <link  rel="stylesheet" href="index.css"></style>
   </head>
   <body>
-    <h1>Avalon</h1>
-    <div id="Landing" >
-      <button onclick="setGameMaster()">Game Master</button>
-      <button onclick="setPlayer()">Player</button>
-    </div>
-    <div id="GameActive" class="hide">
-      Game join code: <span id="gameCode"></span>
-      <br/>
-      Your role: <span id="role"></span>
-      <br/>
-      <button onclick="toggleRole()">show/hide role</button>
-      <hr/>
-    </div>
-    <div id="GMQuest" class="hide">
-      Quest Number: <input type="number" id="GMQuestNum">
-      <br/>
-      Player tokens:
-      <input type="text" id="p1Token">
-      <input type="text" id="p2Token">
-      <input type="text" id="p3Token">
-      <input type="text" id="p4Token">
-      <button onclick="evalQuest()">Eval Quest</button>
-      <hr/>
-    </div>
-    <div id="GMQuestComplete" class="hide">
-      pass: <div id="numPass"></div>
-      fail: <div id="numFail"></div>
-      <button onclick="GMnextQuest()">next quest</button>
-      <hr/>
-    </div>
-    <div id="PYLanding" class="hide">
-      Index in circle:<input type="number" id="roleIndex">
-      Join code: <input type="text" id="joinCode">
-      <button onclick="joinGame()">Join game</button>
-    </div>
-    <div id="PYQuest" class="hide">
-      Quest Number: <input type="number" id="PYQuestNum">
-      Vote: 
-      <select id="PYselector">
-       <option id="pass"> pass</option>
-       <option id ="fail">fail </option>
-      </select>
-      <button onclick="submitVote()">Submit vote</button>
-    </div>
-    <div id="PYQuestComplete" class="hide">
-      Token: <div id="votingToken"></div>
-      <button onclick="PYnextQuest()"> next quest</button>
-    </div>
-  </body>
-</html>
+      <h1>Avalon</h1>
+      <div id="Landing" >
+        <button onclick="setGameMaster()">Game Master</button>
+        <button onclick="setPlayer()">Player</button>
+      </div>
+      <div id="GameActive" class="hide">
+        Game join code: <span id="gameCode"></span>
+        <br/>
+        Your role: <span id="role"></span>
+        <br/>
+        <button onclick="toggleRole()">show/hide role</button>
+        <hr/>
+      </div>
+      <div id="GMQuest" class="hide">
+        Quest Number: <select id="GMQuestNum">
+          <option id ="1">1</option>
+          <option id ="2">2</option>
+          <option id ="3">3</option>
+          <option id ="4">4</option>
+          <option id ="5">5</option>
+          </select>
+        <br/>
+        Player tokens:
+        <input type="text" id="p1Token">
+        <input type="text" id="p2Token">
+        <input type="text" id="p3Token">
+        <input type="text" id="p4Token">
+        <button onclick="evalQuest()">Eval Quest</button>
+        <hr/>
+      </div>
+      <div id="GMQuestComplete" class="hide">
+        pass: <div id="numPass"></div>
+        fail: <div id="numFail"></div>
+        <button onclick="GMnextQuest()">next quest</button>
+        <hr/>
+      </div>
+      <div id="PYLanding" class="hide">
+        Index in circle:<input type="number" id="roleIndex">
+        Join code: <input type="text" id="joinCode">
+        <button onclick="joinGame()">Join game</button>
+      </div>
+      <div id="PYQuest" class="hide">
+        Quest Number: <select id="PYQuestNum">
+          <option id ="1">1</option>
+          <option id ="2">2</option>
+          <option id ="3">3</option>
+          <option id ="4">4</option>
+          <option id ="5">5</option>
+        </select>
+        Vote: 
+        <select id="PYselector">
+          <option id="pass"> pass</option>
+          <option id ="fail">fail </option>
+        </select>
+        <button onclick="submitVote()">Submit vote</button>
+      </div>
+      <div id="PYQuestComplete" class="hide">
+        Token: <div id="votingToken"></div>
+        <button onclick="PYnextQuest()"> next quest</button>
+      </div>
+    </body>
+    </html>
+    

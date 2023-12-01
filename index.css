@@ -1,7 +1,21 @@
 .hide {
-  display: none;
+    display: none;
 }
 
 html {
-  background-color: gray;
+    background-color: gray;
+    width: 100%;
+    font-size: 3rem;
+}
+button {
+    font-size: 0.7rem;
+}
+
+input {
+    font-size: 0.7rem;
+    width: 10%;
+}
+
+select {
+    font-size: 0.7rem;
 }

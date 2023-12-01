@@ -132,11 +132,8 @@ const GMnextQuest = () => {
 const joinGame = () => {
     hideDiv(PYLanding);
     roleIndex = Number(document.getElementById("roleIndex").value);
-    console.log(roleIndex);
     const joinToken = document.getElementById("joinCode").value;
-    console.log(joinToken);
     game = games.filter((game) => game.joinToken == joinToken)[0];
-
     populateGameActive();
     showDiv(PYQuest);
 };
