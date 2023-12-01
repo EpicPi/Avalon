@@ -1,0 +1,19 @@
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "59 23 * * *"
+permissions:
+    contents: write
+jobs:
+    generate_games:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Create new games
+              run: python generate_games.py
+            - name: Commit new games
+              run: |
+                  git config --global user.name 'Epicpi'
+                  git config --global user.email 'piyushgk1@gmail.com'
+                  git commit -am "auto: new games"
+                  git push
