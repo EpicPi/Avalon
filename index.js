@@ -96,14 +96,20 @@ const joinGame = () => {
     showDiv(PYQuest);
 };
 
-const submitVote = () => {
+const submitPass = () => {
+    submitVote(0);
+};
+const submitFail = () => {
+    submitVote(1);
+};
+
+const submitVote = (tokenIndex) => {
+    console.log(tokenIndex);
     hideDiv(PYQuest);
     showDiv(PYQuestComplete);
     const questNum = Number(document.getElementById("PYQuestNum").value) - 1;
-    const tokenIndex = document.getElementById("PYselector").value == "pass" ? 0 : 1;
     const votingToken = game.tokens[questNum * 14 + roleIndex * 2 + tokenIndex];
     document.getElementById("votingToken").innerText = votingToken;
-    document.getElementById("PYselector").value = "pass";
 };
 
 const PYnextQuest = () => {
