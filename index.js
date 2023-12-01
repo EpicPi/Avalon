@@ -4,7 +4,7 @@ fetch("./games.json")
     .then((response) => response.json())
     .then((json) => (games = json));
 
-let showRole = true;
+let showRole = false;
 let game = null;
 let roleIndex = null;
 
