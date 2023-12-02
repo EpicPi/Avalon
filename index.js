@@ -65,8 +65,8 @@ const evalQuest = () => {
     for (token of tokens) {
         const index = inPlayTokens.indexOf(token);
         if (index == -1) {
-            alert(token + "is invalid");
-            throw token + "is invalid";
+            alert(token + " is invalid");
+            throw token + " is invalid";
         } else {
             if (index % 2 == 0) {
                 numPass += 1;
@@ -104,7 +104,6 @@ const submitFail = () => {
 };
 
 const submitVote = (tokenIndex) => {
-    console.log(tokenIndex);
     hideDiv(PYQuest);
     showDiv(PYQuestComplete);
     const questNum = Number(document.getElementById("PYQuestNum").value) - 1;
@@ -124,4 +123,8 @@ const toggleRole = () => {
     } else {
         hideDiv(role);
     }
+};
+
+const makeRandom = () => {
+    document.getElementById("RandomSpan").innerText = Math.floor(Math.random() * 7);
 };

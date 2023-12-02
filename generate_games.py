@@ -2,7 +2,7 @@ import random
 import json
 
 players = ['merlin', 'LSA', 'morgana', 'minion of mordred/oberon', 'percival', 'minion of mordred', 'LSA']
-tokens = ['a' + str(i) for i in range(70)]
+tokens = [str(i) for i in range(70)]
 join_tokens = ['canada','delta','united','frontier','sw','alaska','american','spirit','jetblue']
 
 games = []
