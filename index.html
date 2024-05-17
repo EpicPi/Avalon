@@ -6,9 +6,22 @@
   </head>
   <body>
       <h1>Avalon</h1>
-      <div id="Landing" >
-        <button onclick="setGameMaster()">Game Master</button>
-        <button onclick="setPlayer()">Player</button>
+      <div id="Landing">
+         <h2>Game Master</h2> 
+         <div class=" content">
+           Number of players:<select id="numPlayersSelect">
+             <option id ="5">5</option>
+             <option id ="6">6</option>
+             <option id ="7">7</option>
+             <option id ="8">8</option>
+             <option id ="9">9</option>
+             <option id ="10">10</option>
+            </select>
+          </div>
+          <br>
+          <button onclick="setGameMaster()">Create</button>
+        <hr style="margin-left: 1rem;">
+        <button onclick="setPlayer()">Join</button>
       </div>
       <div id="GameActive" class="hide content">
         Game join code: <span id="gameCode"></span>
@@ -50,6 +63,9 @@
           <option id ="4">4</option>
           <option id ="5">5</option>
           <option id ="6">6</option>
+          <option id ="7">7</option>
+          <option id ="8">8</option>
+          <option id ="9">9</option>
           </select>
           <br>
         Join code: <input type="text" id="joinCode">
@@ -77,7 +93,6 @@
         <button onclick="makeRandom()">Random Index</button>
         <p id="RandomSpan">^^</p>
       </div>
-    
     </footer>
     </html>
     

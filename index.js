@@ -34,10 +34,11 @@ const populateGameActive = () => {
 };
 
 const setGameMaster = () => {
+    const numPlayers = Number(document.getElementById("numPlayersSelect").value);
     hideDiv(Landing);
     showDiv(GMQuest);
     showDiv(PYQuest);
-    game = randomChoice(games);
+    game = randomChoice(games.filter((game) => game.numPlayers == numPlayers));
     roleIndex = 0;
     populateGameActive();
 };
@@ -61,7 +62,7 @@ const evalQuest = () => {
     let numPass = 0;
     let numFail = 0;
     tokens = tokens.filter((token) => token.trim().length > 0);
-    const inPlayTokens = game.tokens.slice(questNum * 14, (questNum + 1) * 14);
+    const inPlayTokens = game.tokens.slice(questNum * game.numPlayers * 2, (questNum + 1) * game.numPlayers * 2);
     for (token of tokens) {
         const index = inPlayTokens.indexOf(token);
         if (index == -1) {
@@ -107,7 +108,7 @@ const submitVote = (tokenIndex) => {
     hideDiv(PYQuest);
     showDiv(PYQuestComplete);
     const questNum = Number(document.getElementById("PYQuestNum").value) - 1;
-    const votingToken = game.tokens[questNum * 14 + roleIndex * 2 + tokenIndex];
+    const votingToken = game.tokens[questNum * game.numPlayers * 2 + roleIndex * 2 + tokenIndex];
     document.getElementById("votingToken").innerText = votingToken;
 };
 
@@ -126,5 +127,5 @@ const toggleRole = () => {
 };
 
 const makeRandom = () => {
-    document.getElementById("RandomSpan").innerText = Math.floor(Math.random() * 7);
+    document.getElementById("RandomSpan").innerText = Math.floor(Math.random() * 12);
 };
