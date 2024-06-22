@@ -59,6 +59,7 @@ const evalQuest = () => {
     tokens.push(document.getElementById("p2Token").value.toLowerCase());
     tokens.push(document.getElementById("p3Token").value.toLowerCase());
     tokens.push(document.getElementById("p4Token").value.toLowerCase());
+    tokens.push(document.getElementById("p5Token").value.toLowerCase());
     let numPass = 0;
     let numFail = 0;
     tokens = tokens.filter((token) => token.trim().length > 0);
