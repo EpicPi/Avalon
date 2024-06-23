@@ -1,5 +1,8 @@
-let games = [];
+const url = new URL(window.location.href);
+let url_game = url.searchParams.get("game");
+let url_index = url.searchParams.get("index");
 
+let games = [];
 fetch("./games.json")
     .then((response) => response.json())
     .then((json) => (games = json));
@@ -31,6 +34,7 @@ const populateGameActive = () => {
     showDiv(GameActive);
     document.getElementById("role").innerHTML = game.players[roleIndex];
     document.getElementById("gameCode").innerHTML = game.joinToken;
+    updateURL();
 };
 
 const setGameMaster = () => {
@@ -38,7 +42,13 @@ const setGameMaster = () => {
     hideDiv(Landing);
     showDiv(GMQuest);
     showDiv(PYQuest);
-    game = randomChoice(games.filter((game) => game.numPlayers == numPlayers));
+    if (url_game) {
+        games.forEach((game) => console.log(game.joinToken));
+        game = games.filter((game) => game.joinToken == url_game)[0];
+        console.log(url_game);
+    } else {
+        game = randomChoice(games.filter((game) => game.numPlayers == numPlayers));
+    }
     roleIndex = 0;
     populateGameActive();
 };
@@ -46,6 +56,12 @@ const setGameMaster = () => {
 const setPlayer = () => {
     hideDiv(Landing);
     showDiv(PYLanding);
+    if (url_game) {
+        document.getElementById("joinCode").value = url_game;
+    }
+    if (url_index) {
+        document.getElementById("roleIndex").selectedIndex = Number(url_index) - 1;
+    }
 };
 
 const randomChoice = (arr) => {
@@ -92,10 +108,16 @@ const GMnextQuest = () => {
 const joinGame = () => {
     hideDiv(PYLanding);
     roleIndex = Number(document.getElementById("roleIndex").value);
-    const joinToken = document.getElementById("joinCode").value;
+    const joinToken = document.getElementById("joinCode").value.toLowerCase();
     game = games.filter((game) => game.joinToken == joinToken)[0];
     populateGameActive();
     showDiv(PYQuest);
+};
+
+const updateURL = () => {
+    url.searchParams.set("game", game.joinToken);
+    url.searchParams.set("index", roleIndex);
+    window.history.pushState({}, "", url);
 };
 
 const submitPass = () => {
